@@ -130,9 +130,11 @@ def get_trending_games():
 
 def get_featured_games():
     """Jordan"""
-    games = [ids] # Currate this ***
-    data = get_multiple_games(games)
-    return data
+    db = SessionLocal()
+    game_ids = (1245620, 413150, 1293830, 1174180, 570)
+    games_list = db.query(Games).filter(Games.id.in_(game_ids)).all()
+    games_list = [game_to_dict(game) for game in games_list]
+    return {"featured": games_list}
 
 def get_top_games():
     """Will"""
