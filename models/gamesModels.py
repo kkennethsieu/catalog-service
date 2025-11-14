@@ -265,7 +265,8 @@ def game_to_dict(game: Games) -> dict:
         "website": game.website,
         "genres": json.loads(game.genres) if game.genres else [],
         "tags": json.loads(game.tags) if game.tags else [],
-        "screenshots": json.loads(game.screenshots) if game.screenshots else [],
+        "screenshots": json.loads(
+            game.screenshots) if game.screenshots else [],
         "metacriticScore": game.metacriticScore,
         "steamRating": game.steamRating
     }
