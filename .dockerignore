@@ -1,0 +1,26 @@
+node_modules
+.git
+.gitignore
+.env
+Dockerfile
+docker-compose.yml
+npm-debug.log
+dist
+build
+
+venv/*
+venv/
+
+__pycache__/
+*.pyc
+__init__.pyc
+instance/
+
+.env
+
+# CSV files and DB environment
+*/games.csv
+*.csv
+node_modules/
+.DS_Store
+

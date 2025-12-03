@@ -1,5 +1,3 @@
-# Game Catalogue Service - Communication Contract
-
 ## Overview
 
 The Game Catalogue Service is a RESTful API microservice that provides access to a comprehensive database of video games. It offers endpoints for searching games, retrieving curated game lists, and browsing games by genre.
