@@ -2,7 +2,7 @@
 
 The Game Catalogue Service is a RESTful API microservice that provides access to a comprehensive database of video games. It offers endpoints for searching games, retrieving curated game lists, and browsing games by genre.
 
-**Base URL**: `http://localhost:8000`
+**Base URL**: `http://localhost:3002`
 
 ## Running the Service
 
@@ -13,7 +13,7 @@ pip install -r requirements
 uvicorn main:app --reload
 ```
 
-The service will start on `http://localhost:8000` by default.
+The service will start on `http://localhost:3002` by default.
 
 ---
 
@@ -34,7 +34,7 @@ The service will start on `http://localhost:8000` by default.
 ```python
 import requests
 
-response = requests.get("http://localhost:8000/games/id/1245620")
+response = requests.get("http://localhost:3002/games/id/1245620")
 game_data = response.json()
 print(game_data)
 ```
@@ -78,7 +78,7 @@ print(game_data)
 ```python
 import requests
 
-response = requests.get("http://localhost:8000/games/search/zelda")
+response = requests.get("http://localhost:3002/games/search/zelda")
 search_results = response.json()
 print(search_results)
 ```
@@ -119,7 +119,7 @@ print(search_results)
 ```python
 import requests
 
-response = requests.get("http://localhost:8000/games/lists")
+response = requests.get("http://localhost:3002/games/lists")
 available_lists = response.json()
 print(available_lists)
 ```
@@ -150,7 +150,7 @@ print(available_lists)
 ```python
 import requests
 
-response = requests.get("http://localhost:8000/games/lists/trending")
+response = requests.get("http://localhost:3002/games/lists/trending")
 trending_games = response.json()
 print(trending_games)
 ```
@@ -184,7 +184,7 @@ print(trending_games)
 ```python
 import requests
 
-response = requests.get("http://localhost:8000/games/lists/featured")
+response = requests.get("http://localhost:3002/games/lists/featured")
 featured_games = response.json()
 print(featured_games)
 ```
@@ -217,7 +217,7 @@ print(featured_games)
 ```python
 import requests
 
-response = requests.get("http://localhost:8000/games/lists/top")
+response = requests.get("http://localhost:3002/games/lists/top")
 top_games = response.json()
 print(top_games)
 ```
@@ -251,7 +251,7 @@ print(top_games)
 ```python
 import requests
 
-response = requests.get("http://localhost:8000/games/lists/staff-picks")
+response = requests.get("http://localhost:3002/games/lists/staff-picks")
 staff_picks = response.json()
 print(staff_picks)
 ```
@@ -284,7 +284,7 @@ print(staff_picks)
 ```python
 import requests
 
-response = requests.get("http://localhost:8000/games/genres")
+response = requests.get("http://localhost:3002/games/genres")
 genres = response.json()
 print(genres)
 ```
@@ -328,7 +328,7 @@ print(genres)
 import requests
 
 # Get the first 10 RPG games
-response = requests.get("http://localhost:8000/games/genres/RPG?skip=0&limit=10")
+response = requests.get("http://localhost:3002/games/genres/RPG?skip=0&limit=10")
 genre_games = response.json()
 print(genre_games)
 ```
@@ -363,7 +363,7 @@ print(genre_games)
 import requests
 
 # Make a GET request to any endpoint
-response = requests.get("http://localhost:8000/games/search/minecraft")
+response = requests.get("http://localhost:3002/games/search/minecraft")
 
 # Check if request was successful
 if response.status_code == 200:
@@ -377,7 +377,7 @@ else:
 
 ```javascript
 // Make a GET request to any endpoint
-fetch("http://localhost:8000/games/lists/trending")
+fetch("http://localhost:3002/games/lists/trending")
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
@@ -390,7 +390,7 @@ fetch("http://localhost:8000/games/lists/trending")
 ### Using cURL:
 
 ```bash
-curl http://localhost:8000/games/id/1245620
+curl http://localhost:3002/games/id/1245620
 ```
 
 ---
@@ -414,7 +414,7 @@ import requests
 import json
 
 # Send request
-response = requests.get("http://localhost:8000/games/genres/Action")
+response = requests.get("http://localhost:3002/games/genres/Action")
 
 # Receive and parse JSON data
 if response.status_code == 200:
@@ -436,7 +436,7 @@ if response.status_code == 200:
 
 ```javascript
 // Send request and receive data
-fetch("http://localhost:8000/games/lists/top")
+fetch("http://localhost:3002/games/lists/top")
   .then((response) => {
     if (response.ok) {
       return response.json(); // Parse JSON
